@@ -1,2 +1,2 @@
 # React-Sneakers-shop
-Created with CodeSandbox
+It's internet Sneakers shop"Pet project" 
