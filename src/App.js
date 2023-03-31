@@ -30,7 +30,7 @@ function App() {
               <div className="d-flex justify-between align-center">
                 <div className="d-flex flex-column ">
                   <span>Price:</span>
-                  <b>399 eur.</b>
+                  <b>199 eur.</b>
                 </div>
                 <button className="button">
                   <img width={11}height={11} src="/img/plus.svg" />
@@ -44,7 +44,7 @@ function App() {
               <div className="d-flex justify-between align-center">
                 <div className="d-flex flex-column ">
                   <span>Price:</span>
-                  <b>399 eur.</b>
+                  <b>199 eur.</b>
                 </div>
                 <button className="button">
                   <img width={11}height={11} src="/img/plus.svg" />
@@ -58,7 +58,7 @@ function App() {
               <div className="d-flex justify-between align-center">
                 <div className="d-flex flex-column ">
                   <span>Price:</span>
-                  <b>399 eur.</b>
+                  <b>199 eur.</b>
                 </div>
                 <button className="button">
                   <img width={11}height={11} src="/img/plus.svg" />
@@ -72,7 +72,7 @@ function App() {
               <div className="d-flex justify-between align-center">
                 <div className="d-flex flex-column ">
                   <span>Price:</span>
-                  <b>399 eur.</b>
+                  <b>199 eur.</b>
                 </div>
                 <button className="button">
                   <img width={11}height={11} src="/img/plus.svg" />
