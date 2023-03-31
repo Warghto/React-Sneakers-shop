@@ -5,16 +5,15 @@ function App() {
     <div className="App clear">
       <div className="overlay">
         <div className="drawer">
-          <h2>Shopping cart</h2>
+          <h2 className="mb-20">Shopping cart</h2>
+
           <div className="cartItem d-flex align-center">
-            <img
-              className="mr-20"
-              width={70}
-              height={70}
-              src="/img/sneakers/1.jpg"
-              alt="Sneakers"
-            />
-            <div className="mr-20">
+            <div
+              style={{ backgroundImage: "url(/img/sneakers/1.jpg)" }}
+              className="cartItemImg"
+            ></div>
+
+            <div className="mr-20 flex">
               <p className="mb-5">Nike Blazer Mid Suede</p>
               <b>199 eur.</b>
             </div>
