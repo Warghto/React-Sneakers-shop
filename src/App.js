@@ -36,8 +36,8 @@ function App() {
               <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
             </div>
             </div>
-
-              <ul className="cartTotalBlock">
+              <div className="cartTotalBlock">
+                <ul>
                 <li>
                   <span>Total price:</span>
                   <div></div>
@@ -50,6 +50,9 @@ function App() {
                   <b> 7 eur.</b>
                 </li>
               </ul>
+                <button className="greenButton">Proceed to checkout<img src="/img/arrow.svg" alt="Arrow" />.</button>
+              </div>
+
           </div>
         </div>
         <header className="d-flex justify-between align-center p-40">
@@ -69,6 +72,8 @@ function App() {
               <img width={18} height={18} src="img/user.svg" />
             </li>
           </ul>
+
+
         </header>
         <div className="content p-40">
           <div className="d-flex align-center justify-between mb-40">
