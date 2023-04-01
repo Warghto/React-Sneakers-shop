@@ -1,65 +1,15 @@
 import "./index.scss";
 import Card from './conponents/Card'
 import Header from "./conponents/Header";
+import Drawer from "./conponents/Drawer";
 
 function App() {
   return (
       <div className="App clear">
-        <div style={{display: 'none'}} className="overlay">
-          <div className="drawer">
-            <h2 className="d-flex justify-between mb-30 ">Shopping cart <img className="cu-p" src="/img/btn-remove.svg" alt="Remove"/></h2>
-            <div className="items">
 
-            <div className="cartItem d-flex align-center mb-20">
-              <div
-                  style={{ backgroundImage: "url(/img/sneakers/1.jpg)" }}
-                  className="cartItemImg"
-              ></div>
-
-              <div className="mr-20 flex">
-                <p className="mb-5">Nike Blazer Mid Suede</p>
-                <b>199 eur.</b>
-              </div>
-              <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
-            </div>
-
-
-
-            <div className="cartItem d-flex align-center mb-20">
-              <div
-                  style={{ backgroundImage: "url(/img/sneakers/2.jpg)" }}
-                  className="cartItemImg"
-              ></div>
-
-              <div className="mr-20 flex">
-                <p className="mb-5">Nike Blazer Mid Suede</p>
-                <b>199 eur.</b>
-              </div>
-              <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
-            </div>
-            </div>
-              <div className="cartTotalBlock">
-                <ul>
-                <li>
-                  <span>Total price:</span>
-                  <div></div>
-                  <b> 405 eur.</b>
-                </li>
-
-                <li>
-                  <span>Fee 5%:</span>
-                  <div></div>
-                  <b> 7 eur.</b>
-                </li>
-              </ul>
-                <button className="greenButton">Proceed to checkout<img src="/img/arrow.svg" alt="Arrow" />.</button>
-              </div>
-
-          </div>
-        </div>
-
-
+        <Drawer />
         <Header />
+
         <div className="content p-40">
           <div className="d-flex align-center justify-between mb-40">
             <h1>All Sneakers</h1>
