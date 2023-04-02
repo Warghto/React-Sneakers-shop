@@ -3,6 +3,12 @@ import Card from './conponents/Card'
 import Header from "./conponents/Header";
 import Drawer from "./conponents/Drawer";
 
+const arr = [
+    {name: 'Nike Blazer Mid Suede', price: 199 },
+    {name: 'Nike Air MAX 270', price: 179 },
+];
+
+
 function App() {
   return (
       <div className="App clear">
@@ -33,10 +39,7 @@ function App() {
           </div>
 
           <div className="d-flex">
-            <Card />
-              <Card />
-              <Card />
-              <Card />
+              {arr.map((obj) => <b>{obj.name}</b>)}
           </div>
         </div>
       </div>
@@ -44,4 +47,3 @@ function App() {
 }
 
 export default App;
-//шапка, карточки товаров,
