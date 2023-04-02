@@ -34,7 +34,9 @@ function App() {
 
           <div className="d-flex">
             <Card />
-
+              <Card />
+              <Card />
+              <Card />
           </div>
         </div>
       </div>
