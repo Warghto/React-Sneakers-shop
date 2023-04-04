@@ -55,11 +55,12 @@ function App() {
                 </div>
 
                 <div className="d-flex">
-                    {arr.map((props) => (
+                    {arr.map((obj) => (
                         <Card
-                            title={props.name}
-                            price={props.price}
-                            imageUrl={props.imageUrl}
+                            title={obj.name}
+                            price={obj.price}
+                            imageUrl={obj.imageUrl}
+                            onClick={() => console.log(obj)}
                         />
                     ))}
                 </div>
