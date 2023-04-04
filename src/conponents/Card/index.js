@@ -1,7 +1,8 @@
-function Card(props) {
+import styles from  './Card.module.scss'
+function Index(props) {
     console.log(props)
     return (
-        <div className="card">
+        <div className={styles.card}>
             <div className="favorite">
                 <img src="/img/unliked.svg" alt="unliked"/>
             </div>
@@ -19,4 +20,4 @@ function Card(props) {
         </div>
     );
 }
-export default Card;
+export default Index;
