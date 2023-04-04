@@ -50,7 +50,7 @@ function App() {
                                 stroke-linecap="round"
                             />
                         </svg>
-                        <input placeholder="Search..." />
+                        <input placeholder="Search..."/>
                     </div>
                 </div>
 
@@ -67,5 +67,4 @@ function App() {
         </div>
     );
 }
-
 export default App;
