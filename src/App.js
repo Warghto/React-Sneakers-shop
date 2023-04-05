@@ -60,8 +60,8 @@ function App() {
                             title={obj.name}
                             price={obj.price}
                             imageUrl={obj.imageUrl}
-                            onClickPlus={() => console.log('product added to bookmarks')}
-                            onClickPlus={() => console.log('plus is pressed')}
+                            onFavorite={() => console.log('product added to bookmarks')}
+                            onPlus={() => console.log('plus is pressed')}
                         />
                     ))}
                 </div>
