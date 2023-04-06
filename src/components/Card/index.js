@@ -22,7 +22,7 @@ function Card(props) {
         <img
           className={styles.plus}
           onClick={onClickPlus}
-          src={isAdded ? "/img/plus.svg" : "/img/plus.svg"}
+          src={isAdded ? "/img/btn-checked.svg" : "/img/plus.svg"}
           alt="Plus"
         />
       </div>
@@ -30,4 +30,3 @@ function Card(props) {
   );
 }
 export default Card;
-
