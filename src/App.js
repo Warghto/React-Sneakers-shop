@@ -1,7 +1,8 @@
+import React from "react";
 import "./index.scss";
-import Card from "./conponents/Card";
-import Header from "./conponents/Header";
-import Drawer from "./conponents/Drawer";
+import Card from "./components/Card";
+import Header from "./components/Header";
+import Drawer from "./components/Drawer";
 
 const arr = [
     {
@@ -50,7 +51,7 @@ function App() {
                                 stroke-linecap="round"
                             />
                         </svg>
-                        <input placeholder="Search..."/>
+                        <input placeholder="Search..." />
                     </div>
                 </div>
 
@@ -60,8 +61,8 @@ function App() {
                             title={obj.name}
                             price={obj.price}
                             imageUrl={obj.imageUrl}
-                            onFavorite={() => console.log('product added to bookmarks')}
-                            onPlus={() => console.log('plus is pressed')}
+                            onFavorite={() => console.log("product added to bookmarks")}
+                            onPlus={() => console.log("plus is pressed")}
                         />
                     ))}
                 </div>
