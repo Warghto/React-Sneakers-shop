@@ -18,6 +18,11 @@ function App() {
       setItems(json)
     });
   }, []);
+
+  const onAddToCart = (obj) => {
+    setCartItems([...cartItems, obj]);
+  }
+
   return (
     <div className="App clear">
       { cartOpened && <Drawer items ={cartItems} onClose={()=> setCartOpened(false)} />}
@@ -46,13 +51,13 @@ function App() {
         </div>
 
         <div className="d-flex flex-wrap">
-          {items.map((obj) => (
+          {items.map((item) => (
             <Card
-              title={obj.title}
-              price={obj.price}
-              imageUrl={obj.imageUrl}
+              title={item.title}
+              price={item.price}
+              imageUrl={item.imageUrl}
               onFavorite={() => console.log("product added to bookmarks")}
-              onPlus={() => console.log("plus is pressed")}
+              onPlus={(obj) => onAddToCart(obj) }
             />
           ))}
         </div>
