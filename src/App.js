@@ -8,6 +8,7 @@ import Drawer from "./components/Drawer";
 function App() {
   const [items, setItems] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
+  const [searchValue, setSearchValue] = React.useState('');
   const [cartOpened, setCartOpened] = React.useState(false);
 
 
@@ -21,6 +22,10 @@ function App() {
 
   const onAddToCart = (obj) => {
     setCartItems([...cartItems, obj]);
+  };
+
+  const onChangeSearchInput = (event) =>{
+    setSearchValue(event.target.value);
   }
 
   return (
@@ -30,7 +35,7 @@ function App() {
 
       <div className="content p-40">
         <div className="d-flex align-center justify-between mb-40">
-          <h1>All Sneakers</h1>
+          <h1>{searchValue ? `Search for "${searchValue}"` : 'All Sneakers' }</h1>
           <div className="Search-block d-flex">
             <svg
               width="20"
@@ -46,13 +51,14 @@ function App() {
                 stroke-linecap="round"
               />
             </svg>
-            <input placeholder="Search..." />
+            <input onChange={onChangeSearchInput} placeholder="Search..." />
           </div>
         </div>
 
         <div className="d-flex flex-wrap">
           {items.map((item) => (
             <Card
+              key={item.title}
               title={item.title}
               price={item.price}
               imageUrl={item.imageUrl}
