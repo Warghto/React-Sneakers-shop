@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+import axios from "axios";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
@@ -13,11 +14,9 @@ function App() {
 
 
   React.useEffect(() => {
-    fetch('https://643062f7b289b1dec4c76583.mockapi.io/items').then(res => {
-      return res.json();
-    }).then(json => {
-      setItems(json)
-    });
+    axios.get('https://643062f7b289b1dec4c76583.mockapi.io/items').then(res =>{
+      setItems(res.data);
+    })
   }, []);
 
   const onAddToCart = (obj) => {
@@ -51,12 +50,13 @@ function App() {
                 stroke-linecap="round"
               />
             </svg>
-            <input onChange={onChangeSearchInput} placeholder="Search..." />
+            {searchValue && <img onClick={() => setSearchValue('')} className=" clear cu-p" src="/img/btn-remove.svg" alt="Clear"/>}
+            <input onChange={onChangeSearchInput} value={searchValue} placeholder="Search..." />
           </div>
         </div>
 
         <div className="d-flex flex-wrap">
-          {items.map((item) => (
+          {items.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((item) => (
             <Card
               key={item.title}
               title={item.title}
