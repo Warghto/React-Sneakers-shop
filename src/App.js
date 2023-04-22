@@ -48,6 +48,7 @@ function App() {
   };
 
   return (
+
     <div className="App clear">
       {cartOpened && (
         <Drawer
@@ -57,18 +58,19 @@ function App() {
         />
       )}
       <Header onClickCart={() => setCartOpened(true)} />
-      {/*<Routes>*/}
-      {/*  <Route path="/">*/}
-      {/*    <Home items={items}*/}
-      {/*          searchValue={searchValue}*/}
-      {/*          setSeacrhValue={setSeacrhValue}*/}
-      {/*          onChangeSearchInput={onChangeSearchInput}*/}
-      {/*          onAddToFavorite={onAddToFavorite}*/}
-      {/*          onAddToCart={onAddToCart}*/}
-      {/*    />*/}
-      {/*  </Route>*/}
-      {/*</Routes>*/}
+
+      <Routes>
+        <Route path="/" element={<Home
+            items={items}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            onChangeSearchInput={onChangeSearchInput}
+            onAddToFavorite={onAddToFavorite}
+            onAddToCart={onAddToCart}/>} />
+      </Routes>
+
     </div>
+
   );
 }
 export default App;

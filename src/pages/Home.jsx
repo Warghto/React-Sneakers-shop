@@ -1,7 +1,7 @@
 import Card from "../components/Card";
-import React from "react";
 
-function Home({items, searchValue, setSeacrhValue, onChangeSearchInput, onAddToFavorite, onAddToCart}){
+
+function Home({items, searchValue, setSearchValue, onChangeSearchInput, onAddToFavorite, onAddToCart}){
     return(
         <div className="content p-40">
             <div className="d-flex align-center justify-between mb-40">

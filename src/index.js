@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import {BrowserRouter as Router } from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
 import './index.scss'
 import 'macro-css';
@@ -12,8 +12,8 @@ const root = createRoot(rootElement);
 
 root.render(
     <StrictMode>
-        <Router>
+        <BrowserRouter>
             <App />
-        </Router>
+        </BrowserRouter>
     </StrictMode>
 );
