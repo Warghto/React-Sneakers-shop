@@ -2,10 +2,12 @@ import React from "react";
 import {Route, Routes} from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/Home"
+import Favorites from "./pages/Favorites";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
 import "./index.scss";
+
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -25,6 +27,11 @@ function App() {
       .then((res) => {
         setCartItems(res.data);
       });
+    axios
+        .get("https://643806eac1565cdd4d6435e6.mockapi.io/favorites")
+        .then((res) => {
+          setFavorites(res.data);
+        });
   }, []);
 
   const onAddToCart = (obj) => {
@@ -67,6 +74,7 @@ function App() {
             onChangeSearchInput={onChangeSearchInput}
             onAddToFavorite={onAddToFavorite}
             onAddToCart={onAddToCart}/>} />
+        <Route path="/favorites" element={<Favorites items={favorites}/>} />
       </Routes>
 
     </div>
