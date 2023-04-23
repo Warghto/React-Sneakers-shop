@@ -35,8 +35,17 @@ function App() {
   }, []);
 
   const onAddToCart = (obj) => {
-    axios.post('https://643062f7b289b1dec4c76583.mockapi.io/cart', obj);
-    setCartItems((prev) => [...prev, obj]);
+    try{
+      if(cartItems.find((item) => Number(item.id) === Number(obj.id))){
+        axios.delete(`https://643062f7b289b1dec4c76583.mockapi.io/cart/${obj.id}`)
+        setCartItems(prev => prev.filter(item  => Number(item.id) !== Number(obj.id) ));
+      }else{
+        axios.post('https://643062f7b289b1dec4c76583.mockapi.io/cart', obj);
+        setCartItems((prev) => [...prev, obj]);
+      }
+    }catch (error){
+      alert('Error with products in cart')
+    }
   };
 
   const onAddToFavorite = async (obj) => {
