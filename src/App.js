@@ -11,7 +11,7 @@ import Drawer from "./components/Drawer";
 
 import "./index.scss";
 
-console.log(AppContext);
+
 
 function App() {
   const [items, setItems] = React.useState([]);
