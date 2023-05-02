@@ -7,19 +7,25 @@ function Drawer({onClose, onRemove, items = []}){
     const {cartItems, setCartItems} = React.useContext(AppContext);
     const [orderId, setOrderID] = React.useState(null)
     const [isOrderComplete, setOrderComplete] = React.useState(false)
+    const [isLoading, setIsLoading] = React.useState(false)
 
     const onClickOrder = async () =>{
         try{
+            setIsLoading(true);
             const { data } = await
-                axios.post("https://643806eac1565cdd4d6435e6.mockapi.io/orders", cartItems);
+                axios.post("https://643806eac1565cdd4d6435e6.mockapi.io/orders", {
+                    items: cartItems,
+                });
+            await axios.put("https://643062f7b289b1dec4c76583.mockapi.io/cart",[]);
             setOrderID(data.id)
             setOrderComplete(true);
-            setCartItems([])
+            setCartItems([]);
         }catch (err){
             alert('Your order was canceled:(' +
                 'try one more time or contact our support to help you')
         }
-    }
+        setIsLoading(false);
+    };
 
     return(
         <div className="overlay">
@@ -57,7 +63,7 @@ function Drawer({onClose, onRemove, items = []}){
                                     <b> 7 eur.</b>
                                 </li>
                             </ul>
-                            <button  onClick={onClickOrder} className="greenButton">Proceed to checkout<img src="/img/arrow.svg" alt="Arrow" />.</button>
+                            <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Proceed to checkout<img src="/img/arrow.svg" alt="Arrow" />.</button>
                         </div>
                     </div>
                 ) : (
