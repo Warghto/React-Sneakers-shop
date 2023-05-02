@@ -3,6 +3,9 @@ import axios from "axios";
 import Info from "./info";
 import AppContext from "../context";
 
+
+const delay = (ms) => new Promise ((resolve)=> setTimeout(resolve, ms));
+
 function Drawer({onClose, onRemove, items = []}){
     const {cartItems, setCartItems} = React.useContext(AppContext);
     const [orderId, setOrderID] = React.useState(null)
@@ -16,10 +19,17 @@ function Drawer({onClose, onRemove, items = []}){
                 axios.post("https://643806eac1565cdd4d6435e6.mockapi.io/orders", {
                     items: cartItems,
                 });
-            await axios.put("https://643062f7b289b1dec4c76583.mockapi.io/cart",[]);
             setOrderID(data.id)
             setOrderComplete(true);
             setCartItems([]);
+
+            for (let i = 0; i < cartItems.length; i++){
+                const item = cartItems[i];
+                await axios.delete(
+                    `https://643062f7b289b1dec4c76583.mockapi.io/cart/${item.id}`);
+                await delay(1000);
+            }
+
         }catch (err){
             alert('Your order was canceled:(' +
                 'try one more time or contact our support to help you')
